@@ -47,74 +47,75 @@ def StoreUrl():
 			URL = driver.get('https://www.kickstarter.com/discover/advanced?term=' + keyword + '&page=' + str(x))
 		except Exception as e:
 			URL = 'None'
+		print(URL)
 		time.sleep(10)
-		soup = BeautifulSoup(driver.page_source,'html.parser')
-		content = soup.find_all('div',class_='js-track-project-card')
-# 		time.sleep(10)
-		for element in content:
-			try:
-				pageURL = element.find('a',{'class': 'soft-black mb3'})['href']
-			except Exception as e:
-				pageURL = 'None'
+# 		soup = BeautifulSoup(driver.page_source,'html.parser')
+# 		content = soup.find_all('div',class_='js-track-project-card')
+# # 		time.sleep(10)
+# 		for element in content:
+# 			try:
+# 				pageURL = element.find('a',{'class': 'soft-black mb3'})['href']
+# 			except Exception as e:
+# 				pageURL = 'None'
 	
-			try:
-				title = element.find('h3',{'class': 'type-18 light hover-item-text-underline mb1'}).text.strip()
-			except Exception as e:
-				title = 'None'
+# 			try:
+# 				title = element.find('h3',{'class': 'type-18 light hover-item-text-underline mb1'}).text.strip()
+# 			except Exception as e:
+# 				title = 'None'
 
-			try:
-				location = element.find('a',{'class': 'dark-grey-500 hover-soft-black text-underline type-13 medium ml4'}).text.strip()
-			except Exception as e:
-				location = 'None'
+# 			try:
+# 				location = element.find('a',{'class': 'dark-grey-500 hover-soft-black text-underline type-13 medium ml4'}).text.strip()
+# 			except Exception as e:
+# 				location = 'None'
 
-			try:
-				BrandPage = element.find('a', {'class': 'soft-black hover-text-underline medium'})['href']
-			except Exception as e:
-				BrandPage = 'None'
+# 			try:
+# 				BrandPage = element.find('a', {'class': 'soft-black hover-text-underline medium'})['href']
+# 			except Exception as e:
+# 				BrandPage = 'None'
 
-			try:
-				BrandName = element.find('a', {'class': 'soft-black hover-text-underline medium'}).text.strip()
-			except Exception as e:
-				BrandName = 'None'
+# 			try:
+# 				BrandName = element.find('a', {'class': 'soft-black hover-text-underline medium'}).text.strip()
+# 			except Exception as e:
+# 				BrandName = 'None'
 
-			try:
-				Pledged = element.find('div', {'class': 'type-13 mr2'}).text.strip()
-			except Exception as e:
-				Pledged = 'None'
+# 			try:
+# 				Pledged = element.find('div', {'class': 'type-13 mr2'}).text.strip()
+# 			except Exception as e:
+# 				Pledged = 'None'
 
-			try:
-				Funded = element.find('div', {'class': 'type-13 mr2 dark-grey-500 medium'}).text.strip()
-			except Exception as e:
-				Funded = 'None'
+# 			try:
+# 				Funded = element.find('div', {'class': 'type-13 mr2 dark-grey-500 medium'}).text.strip()
+# 			except Exception as e:
+# 				Funded = 'None'
 
-			try:
-				WhomAndBackers = element.find('div', {'class': 'soft-black text-ellipsis'}).text.strip()
-			except Exception as e:
-				WhomAndBackers = 'None'
+# 			try:
+# 				WhomAndBackers = element.find('div', {'class': 'soft-black text-ellipsis'}).text.strip()
+# 			except Exception as e:
+# 				WhomAndBackers = 'None'
 
-			try:
-				image = element.find('img', {'class': 'border-grey-400 border-bottom w100p absolute t0'})['src']
-			except Exception as e:
-				image = 'None'
+# 			try:
+# 				image = element.find('img', {'class': 'border-grey-400 border-bottom w100p absolute t0'})['src']
+# 			except Exception as e:
+# 				image = 'None'
 
-			element_info = {
-				'Keyword': keyword,
-				'Product Headline': title,
-				'Page URL': pageURL,
-				'market': location,
-				'Brand Name': BrandName,
-				'BrandPage': BrandPage,
-				'Pledged': Pledged,
-				'Funded': Funded,
-				'Creator and Amount of Backers': WhomAndBackers,
-				'Image': image
-			}
+# 			element_info = {
+# 				'Keyword': keyword,
+# 				'Product Headline': title,
+# 				'Page URL': pageURL,
+# 				'market': location,
+# 				'Brand Name': BrandName,
+# 				'BrandPage': BrandPage,
+# 				'Pledged': Pledged,
+# 				'Funded': Funded,
+# 				'Creator and Amount of Backers': WhomAndBackers,
+# 				'Image': image
+# 			}
 
-			kickstarterBot.append(element_info)
+# 			kickstarterBot.append(element_info)
 
-	df = pd.DataFrame(kickstarterBot)
-	df.to_csv('kickstarter1.csv')
-	return send_file('kickstarter1.csv', mimetype='text/csv', attachment_filename='kickstarter1.csv',as_attachment=True)
+# 	df = pd.DataFrame(kickstarterBot)
+# 	df.to_csv('kickstarter1.csv')
+# 	return send_file('kickstarter1.csv', mimetype='text/csv', attachment_filename='kickstarter1.csv',as_attachment=True)
 
 
 
