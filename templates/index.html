@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Kickstarter Bot</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+	</head>
+	<body>
+		<img src="http://www.easy2digital.com/wp-content/uploads/2021/11/lokiuyiui23232-Max-Quality.jpg" width=300 height="250">
+		<br>
+		<form action="StoreUrl" method="post">
+			{% for message in get_flashed_messages()%}
+				<p>{{message}}</p>
+			{% endfor %}
+			<br>
+			<input type="text" name="kw_input">
+			<br>
+			<input type="submit" value="Download" id="download">
+		</form>
+		<p>This is a lighter version of Kickstarter Bot Created by Easy2Digital | Copy Right</p>
+	</body>
+</html>
