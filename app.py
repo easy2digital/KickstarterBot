@@ -16,14 +16,14 @@ from oauth2client.service_account import ServiceAccountCredentials
 app = Flask(__name__)
 app.secret_key = "lousieasy2digital_19u04358454"
 
-@app.route("/hello")
+@app.route("/bot")
 
 def index():
 	flash("Please enter a sector or product category or product type keyword. For example, smart home")
 	return render_template("index.html")
 
 
-@app.route("/StoreUrl", methods=["POST", "GET"])
+@app.route("/Result", methods=["POST", "GET"])
 def StoreUrl():
 	flash("Great! " + str(request.form['kw_input']) + " - This is the scraped on-going crowdfunding project, check it out!")
 
