@@ -40,9 +40,6 @@ def StoreUrl():
 	options.add_experimental_option('excludeSwitches',['enable-automation'])
 	options.add_argument('--disable-blink-features=AutomationControlled')
 	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
-	# scope = ['https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/drive']
-	# creds = ServiceAccountCredentials.from_json_keyfile_name('/Users/louislu/Desktop/Python/Workable_Script/amazon-price-tracker-321016-494586b5d875.json',scope)
-	# client = gspread.authorize(creds)
 
 	for x in range (1,3):
 
