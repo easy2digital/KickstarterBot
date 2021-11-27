@@ -31,15 +31,15 @@ def StoreUrl():
 
 	keyword = str(request.form['kw_input'])
 
-	options = webdriver.ChromeOptions()
-	options.add_argument('lang=zh_CN.UTF-8')
-	options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-	options.add_argument("--headless")
-	options.add_argument("--disable-dev-shm-usage")
-	options.add_argument("--no-sandbox")
-	options.add_experimental_option('excludeSwitches',['enable-automation'])
-	options.add_argument('--disable-blink-features=AutomationControlled')
-	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
+	chrome_options = webdriver.ChromeOptions()
+	chrome_options.add_argument('lang=zh_CN.UTF-8')
+	chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+	chrome_options.add_argument("--headless")
+	chrome_options.add_argument("--disable-dev-shm-usage")
+	chrome_options.add_argument("--no-sandbox")
+	chrome_options.add_experimental_option('excludeSwitches',['enable-automation'])
+	chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 	for x in range (1,3):
 
