@@ -36,6 +36,7 @@ def StoreUrl():
 	chrome_options.add_argument('--headless')
 	chrome_options.add_argument('--disable-dev-shm-usage')
 	chrome_options.add_argument('--no-sandbox')
+	chrome_options.add_argument('--remote-debugging-port=9222')
 	chrome_options.add_experimental_option('excludeSwitches',['enable-automation'])
 	chrome_options.add_argument('--disable-blink-features=AutomationControlled')
 	driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=chrome_options)
@@ -46,7 +47,7 @@ def StoreUrl():
 			URL = driver.get('https://www.kickstarter.com/discover/advanced?term=' + keyword + '&page=' + str(x))
 		except Exception as e:
 			URL = 'None'
-		time.sleep(5)
+		time.sleep(8)
 # 	return render_template("index.html")
 
 		soup = BeautifulSoup(driver.page_source,'html.parser')
