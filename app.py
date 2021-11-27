@@ -47,7 +47,7 @@ def StoreUrl():
 			URL = driver.get('https://www.kickstarter.com/discover/advanced?term=' + keyword + '&page=' + str(x))
 		except Exception as e:
 			URL = 'None'
-		time.sleep(15)
+		time.sleep(5)
 		soup = BeautifulSoup(driver.page_source,'html.parser')
 		content = soup.find_all('div',class_='js-track-project-card')
 		
