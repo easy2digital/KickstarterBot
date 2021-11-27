@@ -29,14 +29,14 @@ input:focus{
 	border:  solid 5px #00FFCE;
 }
 
-#StoreUrl {
+#Result {
 	background-color: palevioletred;
 	color: white;
 	width: 200 px;
 
 }
 
-#StoreUrl:hover {
+#Result:hover {
 	background-color: mediumvioletred;
 	cursor: pointer;
 }
