@@ -48,7 +48,9 @@ def StoreUrl():
 		except Exception as e:
 			URL = 'None'
 		print(URL)
-		time.sleep(10)
+		time.sleep(5)
+	return render_template("index.html")
+
 # 		soup = BeautifulSoup(driver.page_source,'html.parser')
 # 		content = soup.find_all('div',class_='js-track-project-card')
 # # 		time.sleep(10)
