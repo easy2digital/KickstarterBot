@@ -39,7 +39,7 @@ def StoreUrl():
 	chrome_options.add_argument("--no-sandbox")
 # 	chrome_options.add_experimental_option('excludeSwitches',['enable-automation'])
 # 	chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 
 	for x in range (1,3):
 
